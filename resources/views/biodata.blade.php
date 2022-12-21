@@ -12,7 +12,7 @@
       <div class="card-header text-center font-weight-bold">
       </div>
       <div class="card-body">
-        <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="{{url('store-form')}}">
+        <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="{{url('kirimbiodata')}}">
           @csrf
           {{-- <div class="form-group">
                 <label for="exampleInputEmail1">id</label>
@@ -20,23 +20,23 @@
               </div> --}}
           <div class="form-group">
             <label for="exampleInputEmail1">Nama</label>
-            <input type="text" id="id_iot" name="id_iot" class="form-control">
+            <input type="text" id="nama" name="nama" class="form-control">
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Alamat</label>
-            <input type="kabupaten" id="kabupaten" name="kabupaten" class="form-control" required="">
+            <input type="text" id="alamat" name="alamat" class="form-control" required="">
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Kabupaten</label>
-            <input type="lokasi_latitude" id="lokasi_latitude" name="lokasi_latitude" class="form-control">
+            <input type="text" id="kabupaten" name="kabupaten" class="form-control">
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Telephone</label>
-            <input type="lokasi_longitude" id="lokasi_longitude" name="lokasi_longitude" class="form-control">
+            <label for="exampleInputEmail1">No Hp/Whastapp</label>
+            <input type="text" id="nohp" name="nohp" class="form-control">
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">No Ktp</label>
-            <input type="lokasi_longitude" id="lokasi_longitude" name="lokasi_longitude" class="form-control">
+            <input type="text" id="noktp" name="noktp" class="form-control">
           </div>
           
           <br>
