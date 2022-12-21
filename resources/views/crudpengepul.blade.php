@@ -12,27 +12,27 @@
                                     <form class="forms-sample">
                                         <div class="form-group">
                                             <label for="exampleInputnama">Nama</label>
-                                            <input type="text" class="form-control" id="exampleInputnama"
+                                            <input type="text" class="form-control" id="nama"
                                                 placeholder="Masukan Nama">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputalamat">Alamat</label>
-                                            <input type="email" class="form-control" id="exampleInputalamat"
+                                            <input type="email" class="form-control" id="alamat"
                                                 placeholder="Alamat">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputkabupaten">Kabupaten</label>
-                                            <input type="email" class="form-control" id="exampleInputkabupaten"
+                                            <input type="email" class="form-control" id="kabupaten"
                                                 placeholder="Kabupaten">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputtelepon">Telepon</label>
-                                            <input type="email" class="form-control" id="exampleInputtelepon"
+                                            <input type="email" class="form-control" id="telepon"
                                                 placeholder="Masukan No Telepon">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputnoktp">No KTP</label>
-                                            <input type="email" class="form-control" id="exampleInputnoktp"
+                                            <input type="email" class="form-control" id="Inputnoktp"
                                                 placeholder="Masukan No KTP">
                                         </div>
                                         <button type="submit" class="btn btn-primary me-2">Submit</button>
