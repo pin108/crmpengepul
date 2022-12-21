@@ -49,6 +49,10 @@ Route::middleware('auth')->group(function () {
         return view('crudpengepul');
     }
     );
+    Route::get('/menu/profile', function () {
+        return view('biodata');
+    }
+    );
 });
 
 require __DIR__.'/auth.php';
