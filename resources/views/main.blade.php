@@ -7,7 +7,7 @@
         <div class="content-wrapper">
           <div class="row">
             <div class="col-12 col-lg-6 grid-margin stretch-card">
-              <a href="{{ url('/menu/crudpengepul') }}" style="text-decoration: none; color:#000">
+              <a href="/formbiodata" style="text-decoration: none; color:#000">
                 <div class="card">
                   <div class="card-body">
                     <h4 class="card-title">Pendaftaran Pengepul</h4>
