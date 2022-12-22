@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('nohp');
             $table->string('noktp')->nullable();
             $table->string('kabupaten');
+            $table->string('id_user');
             $table->timestamps();
         });
     }
