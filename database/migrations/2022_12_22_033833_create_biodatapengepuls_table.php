@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->string('alamat');
-            $table->bigInteger('nohp');
-            $table->bigInteger('noktp')->nullable();
+            $table->string('nohp');
+            $table->string('noktp')->nullable();
             $table->string('kabupaten');
             $table->timestamps();
         });
