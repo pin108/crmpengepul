@@ -21,11 +21,11 @@
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">No Hp/Whastapp</label>
-            <input type="text" id="nohp" name="nohp" class="form-control" required="">
+            <input type="number" id="nohp" name="nohp" class="form-control" required="">
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">No Ktp</label>
-            <input type="text" id="noktp" name="noktp" class="form-control">
+            <input type="number" id="noktp" name="noktp" class="form-control">
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Kabupaten</label>
