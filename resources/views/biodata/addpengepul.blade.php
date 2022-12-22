@@ -9,31 +9,32 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title">Pendaftaran Pengepul</h4>
-                                    <form class="forms-sample">
+                                    <form class="forms-sample" action="/insertdatapengepul" method="POST" enctype="multipart/form-data">
+                                        @csrf
                                         <div class="form-group">
                                             <label for="exampleInputnama">Nama</label>
-                                            <input type="text" class="form-control" id="nama"
+                                            <input type="text" class="form-control" name="nama"
                                                 placeholder="Masukan Nama">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputalamat">Alamat</label>
-                                            <input type="email" class="form-control" id="alamat"
+                                            <input type="text" class="form-control" name="alamat"
                                                 placeholder="Alamat">
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputkabupaten">Kabupaten</label>
-                                            <input type="email" class="form-control" id="kabupaten"
-                                                placeholder="Kabupaten">
-                                        </div>
-                                        <div class="form-group">
                                             <label for="exampleInputtelepon">Telepon</label>
-                                            <input type="email" class="form-control" id="telepon"
+                                            <input type="number" class="form-control" name="telepon"
                                                 placeholder="Masukan No Telepon">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputnoktp">No KTP</label>
-                                            <input type="email" class="form-control" id="Inputnoktp"
+                                            <input type="number" class="form-control" name="noktp"
                                                 placeholder="Masukan No KTP">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputkabupaten">Kabupaten</label>
+                                            <input type="text" class="form-control" name="kabupaten"
+                                                placeholder="Kabupaten">
                                         </div>
                                         <button type="submit" class="btn btn-primary me-2">Submit</button>
                                         <button class="btn btn-light">Cancel</button>

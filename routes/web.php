@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PengepulController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -45,10 +46,14 @@ Route::middleware('auth')->group(function () {
     }
     );
 
+    // pengepul
     Route::get('/menu/crudpengepul', function () {
-        return view('crudpengepul');
-    }
-    );
+        return view('biodata/addpengepul');
+    });
+
+    Route::post('/insertdatapengepul', [PengepulController::class, 'insertdatapengepul'])->name('insertdatapengepul');
+
+
     Route::get('/menu/profile', function () {
         return view('biodata');
     }
