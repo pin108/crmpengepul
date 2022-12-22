@@ -6,8 +6,19 @@
                 <span class="menu-title">Dashboard</span>
             </a>
         </li>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown button
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>
         <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false"
+            
+            <a class="nav-link" data-bs-toggle="dropdown" href="#form-elements" aria-expanded="false"
                 aria-controls="form-elements">
                 <i class="menu-icon mdi mdi-cash-multiple"></i>
                 <span class="menu-title">Transaksi</span>

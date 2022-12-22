@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Biodatapengepul;
 use Illuminate\Http\Request;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 class BiodatapengepulController extends Controller
 {
@@ -33,9 +33,9 @@ class BiodatapengepulController extends Controller
         $kabupaten = $request->input('kabupaten');
         // $nama = $request->input('nama');
         // $nama = $request->input('nama');
-        $currentuserid = Auth::user()->id;
+        // $currentuserid = Auth::id();
         Biodatapengepul::create([
-            'id_user' => $currentuserid,
+            // 'id_user' => $currentuserid,
             'alamat' => $alamat,
             'nama' => $nama,
             'nohp' => $nohp,
@@ -43,7 +43,7 @@ class BiodatapengepulController extends Controller
             'kabupaten' => $kabupaten
         ]);
 
-        Biodatapengepul::create($request->all());
+        // Biodatapengepul::create($request->all());
         return redirect('/formbiodata')->with('status', 'Biodata pengepul telah berhasil dibuat');
     }
 

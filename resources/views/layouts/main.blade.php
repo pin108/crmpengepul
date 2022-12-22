@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
     <title>Crm Pengepul-CoE UDINUS</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="{{ asset('style/template/vendors/feather/feather.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('style/template/vendors/feather/feather.css') }}">
     <link rel="stylesheet" href="{{ asset('style/template/vendors/ti-icons/css/themify-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('style/template/vendors/css/vendor.bundle.base.css') }}">
     <!-- endinject -->
@@ -17,7 +17,21 @@
     <link rel="stylesheet" href="{{ asset('style/template/css/vertical-layout-light/style.css') }}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js"
         integrity="sha512-CX7sDOp7UTAq+i1FYIlf9Uo27x4os+kGeoT7rgwvY+4dmjqV0IuE/Bl5hVsjnQPQiTOhAX1O2r2j5bjsFBvv/A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
+
+        <link rel="stylesheet" href="{{ asset('style/template/vendors/feather/feather.css') }}">
+        <link rel="stylesheet" href="{{ asset('style/template/vendors/mdi/css/materialdesignicons.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('style/template/vendors/ti-icons/css/themify-icons.css') }}">
+        <link rel="stylesheet" href="{{ asset('style/template/vendors/typicons/typicons.css') }}">
+        <link rel="stylesheet" href="{{ asset('style/template/vendors/simple-line-icons/css/simple-line-icons.css') }}">
+        <link rel="stylesheet" href="{{ asset('style/template/vendors/css/vendor.bundle.base.css') }}">
+        <!-- endinject -->
+        <!-- Plugin css for this page -->
+        {{-- <link rel="stylesheet" href="{{ asset('style/template/') }}vendors/datatables.net-bs4/dataTables.bootstrap4.css"> --}}
+        <link rel="stylesheet" href="{{ asset('style/template/js/select.dataTables.min.css') }}">
+        <!-- End plugin css for this page -->
+        <!-- inject:css -->
+        <link rel="stylesheet" href="{{ asset('style/template/css/vertical-layout-light/style.css') }}">
     <!-- endinject -->
     <link rel="shortcut icon" href="images/favicon.png" />
 
@@ -185,47 +199,48 @@
     <!-- container-scroller -->
 
     <!-- plugins:js -->
-    <script src="{{ asset('style/template/vendors/js/vendor.bundle.base.js') }}"></script>
+    {{-- <script src="{{ asset('style/template/vendors/js/vendor.bundle.base.js') }}"></script> --}}
     <!-- endinject -->
     <!-- Plugin js for this page -->
-    <script src="{{ asset('style/template/vendors/chart.js/Chart.min.js') }}"></script>
+    {{-- <script src="{{ asset('style/template/vendors/chart.js/Chart.min.js') }}"></script>
     <script src="{{ asset('style/template/vendors/datatables.net-bs4/dataTables.bootstrap4.js') }}"></script>
 
     <!-- End plugin js for this page -->
     <!-- inject:js -->
     <script src="{{ asset('style/template/js/table-lengkap.js') }}"></script>
 
-    <script src="{{ asset('style/template/js/hoverable-collapse.js') }}"></script>
+    <script src="{{ asset('style/template/js/hoverable-collapse.js') }}"></script> --}}
     {{-- <script src="{{ asset('style/template/js/off-canvas.js') }}"></script> --}}
-    <script src="{{ asset('style/template/js/hoverable-collapse.js') }}"></script>
-    <script src="{{ asset('style/template/js/template.js') }}"></script>
+    {{-- <script src="{{ asset('style/template/js/hoverable-collapse.js') }}"></script>
+
     <script src="{{ asset('style/template/js/settings.js') }}"></script>
-    <script src="{{ asset('style/template/js/todolist.js') }}"></script>
+    <script src="{{ asset('style/template/js/todolist.js') }}"></script> --}}
     <!-- endinject -->
     <!-- Custom js for this page-->
-    <script src="{{ asset('style/template/js/dashboard.js') }}"></script>
+    {{-- <script src="{{ asset('style/template/js/dashboard.js') }}"></script>
     <script src="{{ asset('style/template/js/Chart.roundedBarCharts.js') }}"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
-    <script src="vendors/js/vendor.bundle.base.js"></script>
+    <script src="vendors/js/vendor.bundle.base.js"></script> --}}
     <!-- endinject -->
-    <!-- Plugin js for this page -->
+    {{-- <!-- Plugin js for this page -->
     <script src="vendors/chart.js/Chart.min.js"></script>
     <script src="vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-    <script src="vendors/progressbar.js/progressbar.min.js"></script>
+    <script src="vendors/progressbar.js/progressbar.min.js"></script> --}}
 
     <!-- End plugin js for this page -->
     <!-- inject:js -->
     {{-- <script src="{{ assets('style/template/js/off-canvas.js') }}"></script>
     <script src="{{ assets('style/template/js/off-canvas.js') }}"></script> --}}
-    <script src="{{ asset('style/template/js/hoverable-collapse.js') }}"></script>
+    {{-- <script src="{{ asset('style/template/js/hoverable-collapse.js') }}"></script>
     <script src="{{ asset('style/template/js/off-canvas.js') }}"></script>
     <script src="{{ asset('style/template/js/off-canvas.js') }}"></script>
 
-    <script src="{{ asset('style/template/js/template.js') }}"></script>
+    <script src="{{ asset('style/template/js/template.js') }}"></script> --}}
     {{-- <scri    
 pt src=""></scri>
     <script src="js/settings.js"></script>
     <script src="js/todolist.js"></script> --}}
+    <script src="{{ asset('style/template/js/template.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>
