@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('biodatas', function (Blueprint $table) {
+        Schema::create('transaksibelis', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('alamat');
-            $table->bigInteger('nohp');
-            $table->bigInteger('noktp')->nullable();
-            $table->string('kabupaten');
+            $table->date('transaksibeli_tanggal');
+            $table->string('transaksibeli_namapetani');
+            $table->string('transaksibeli_alamat');
+            $table->string('transaksibeli_kabupaten');
+            $table->float('transaksibeli_taksiranpanen');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('biodatas');
+        Schema::dropIfExists('transaksibelis');
     }
 };
