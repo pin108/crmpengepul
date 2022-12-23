@@ -22,16 +22,18 @@
               </a>
             </div>
             <div class="col-12 col-lg-6 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Transaksi</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est rem dolore dolor, earum iusto sunt
-                    voluptatem? Assumenda eligendi earum suscipit quisquam voluptas. Quos dignissimos quaerat hic eaque
-                    at debitis nemo sunt earum nihil ducimus minus dolor itaque fugiat ratione non nam rerum, nulla
-                    doloremque soluta.
-                  </p>
+              <a href="/halamantransaksi" style="text-decoration: none; color:#000">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Transaksi</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est rem dolore dolor, earum iusto sunt
+                      voluptatem? Assumenda eligendi earum suscipit quisquam voluptas. Quos dignissimos quaerat hic eaque
+                      at debitis nemo sunt earum nihil ducimus minus dolor itaque fugiat ratione non nam rerum, nulla
+                      doloremque soluta.
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
           <div class="row">
