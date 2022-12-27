@@ -23,7 +23,10 @@
                                     Petani
                                 </th>
                                 <th>
-                                    Jumlah Panen
+                                    Jumlah Panen dari petani
+                                </th>
+                                <th>
+                                    Tafsiran Harga dari petani
                                 </th>
                                 <th>
                                     Status Verifikasi
@@ -37,17 +40,20 @@
                             @foreach ($data as $item)
                                 <tr>
                                     <td class="py-1">
-                                        <span>{{ $item['tanggal'] }}</span>
+                                        <span>{{ $item['panen_tanggal'] }}</span>
                                     </td>
                                     <td>
                                         {{ $item['namapetani'] }}
                                     </td>
                                     <td>
-                                        {{ $item['jumlahhasil'] }}
+                                        {{ $item['panen_jumlah'] }}
+                                    </td>
+                                    <td>
+                                        {{ $item['panen_harga'] }}
                                     </td>
                                     <td>
                                     <?php
-                                    if ($item['statusverifikasi'] == 0){
+                                    if ($item['statusdaripengepul'] == 0){
                                         echo("belum terverifikasi");
                                     }else{
                                         echo("Telah Terverifikasi");

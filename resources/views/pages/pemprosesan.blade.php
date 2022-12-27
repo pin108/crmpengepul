@@ -15,10 +15,11 @@
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
-                            @foreach ($data as $item)
                             <tr>
                                 <th>
-                                    {{ $item['tanggal'] }}
+                                    {{-- {{ $item['tanggal'] }} --}}
+                                    Tanggal
+                                    {{-- @endforeach --}}
                                 </th>
                                 <th>
                                     Taksir Petani
@@ -41,33 +42,41 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="py-1">
-                                    <span>13/12/2022</span>
-                                </td>
-                                <td>
-                                    5 Ton
-                                </td>
-                                <td>
-                                    4 Ton
-                                </td>
-                                <td>
-                                    -
-                                </td>
-                                <td>
-                                    1 Ton
-                                </td>
-                                <td>
-                                    3 Ton
-                                </td>
-                                <td>
-                                    <div class="action">
-                                        <button class="btn btn-sm btn-warning">
-                                            <span>Edit</span>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
+                            @foreach ($data as $item)
+                                <tr>
+
+                                    <td class="py-1">
+                                        <span>13/12/2022</span>
+                                    </td>
+                                    <td>
+                                        5 Ton
+                                    </td>
+                                    <td>
+                                        {{ $item['panen_harga'] }}
+                                    </td>
+                                    <td>
+                                        {{ $item['panen_kualitas_a'] }}
+                                    </td>
+                                    <td>
+                                        {{ $item['panen_kualitas_b'] }}
+                                    </td>
+                                    <td>
+                                        {{ $item['panen_kualitas_c'] }}
+                                    </td>
+                                    <td>
+                                        <div class="action">
+                                            {{-- <button class="btn btn-sm btn-warning">
+                                                <span>Proses</span> --}}
+                                            </button><form action="/proses/updatedata/{{ $item['id'] }}" method="post">
+                                                @csrf
+                                            <button type="submit" class="btn btn-sm btn-success" id="statusverifikasi" name="statusverifikasi" type="submit" value="1">
+                                                <span>Process</span>
+                                                {{-- <a href=''> --}}
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -110,10 +119,10 @@
             </div>
         </div>
     </div>
-</div>
-<!-- content-wrapper ends -->
-<!-- partial:partials/_footer.html -->
-  <!-- partial -->
-</div>
-<!-- main-panel ends -->
+    </div>
+    <!-- content-wrapper ends -->
+    <!-- partial:partials/_footer.html -->
+    <!-- partial -->
+    </div>
+    <!-- main-panel ends -->
 @endsection

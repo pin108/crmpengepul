@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Modeltransaksibeli;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 
 class pemprosessan extends Controller
 {
@@ -15,13 +18,36 @@ class pemprosessan extends Controller
     public function index()
     {
         $id_user = Auth::user()->id;
+
+        $id_user = Auth::user()->id;
+        // $namapengepul = Auth::user()->name;
+        $response = DB::table('daftarpengepuls')->select('*')->where('id_user', $id_user)->get();
+        $decoding = json_decode($response, True);
+        foreach ($decoding as $dim) {
+            $namapengepul = $dim['nama'];
+        }
+
         // $namapetani = Auth::user()->name;
-        $response = DB::table('tambahbelis')->select('*')->where('id_user', $id_user)->where('statusverifikasi', 1)->get();
+        // $response = DB::table('panen')->select('*')->where('id_penebas', $namapengepul)->get();
+        $response = DB::table('daftarpengepuls')
+            ->join('panens', 'id_penebas', '=', 'daftarpengepuls.nama')
+            ->where('status', 'verify')
+            ->where('daftarpengepuls.nama', $namapengepul)
+            ->where('statusdaripengepul' , 1)
+            ->get();
         $data = json_decode($response, True);
-        
         // return redirect('pages/myprofile');
         // return dd($data);
-        return view('pages/pemprosesan',compact('data'));
+        return view('pages/pemprosesan', compact('data'));
+
+        //     $id_user = Auth::user()->id;
+        //     // $namapetani = Auth::user()->name;
+        //     $response = DB::table('panens')->select('*')->where('id_user', $id_user)->where('statusverifikasi', 1)->get();
+        //     $data = json_decode($response, True);
+
+        //     // return redirect('pages/myprofile');
+        //     // return dd($data);
+        // 
     }
 
     /**
@@ -64,7 +90,7 @@ class pemprosessan extends Controller
         // $resulthasilpanen = $panenhasil;
         // if ($stnpanenhasil == "Kuintal") {
         //     $resulthasilpanen = $resulthasilpanen * 100;
-        // }
+        // }222
         // if ($stnpanenhasil == "Ton") {
         //     $resulthasilpanen = $resulthasilpanen * 1000;
         // } else {
@@ -113,7 +139,7 @@ class pemprosessan extends Controller
         $data->update([
             // 'id_user' => $currentuserid,
             // 'id_lokasisawah' => $datalokasi,
-            'panen_tanggal' => $panen_tanggal,
+            // 'panen_tanggal' => $panen_tanggal,
             // 'panen_hasil_produksi' => $resulthasilpanen,
             'kualitasA' => $panenkualitas_a,
             'kualitasB' => $panenkualitas_b,

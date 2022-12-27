@@ -5,8 +5,8 @@
         <a href="{{ url('pages/myprofile') }}" style="text-decoration: none; color:#000">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Pendaftaran Pengepul</h4>
-                    <p>Lakukan Pendaftaran Terlebih Dahulu Disini
+                    <h4 class="card-title">Profile Pengepul</h4>
+                    <p>Lakukan Pendaftaran Terlebih Dahulu Disini jika belum daftar 
                     </p>
                 </div>
             </div>

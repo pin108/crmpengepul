@@ -17,12 +17,24 @@ class transaksibeli extends Controller
     public function index()
     {
         $id_user = Auth::user()->id;
+        // $namapengepul = Auth::user()->name;
+        $response = DB::table('daftarpengepuls')->select('*')->where('id_user', $id_user)->get();
+        $decoding = json_decode($response, True);
+        foreach ($decoding as $dim) {
+            $namapengepul = $dim['nama'];
+        }
         // $namapetani = Auth::user()->name;
-        $response = DB::table('tambahbelis')->select('*')->where('id_user', $id_user)->get();
+        // $response = DB::table('panen')->select('*')->where('id_penebas', $namapengepul)->get();
+        $response = DB::table('daftarpengepuls')
+            ->join('panens', 'id_penebas', '=', 'daftarpengepuls.nama')
+            ->where('daftarpengepuls.nama', $namapengepul)
+
+            ->where('status', 'verify')
+            ->get();
         $data = json_decode($response, True);
         // return redirect('pages/myprofile');
         // return dd($data);
-        return view('pages/transaksibeli',compact('data'));
+        return view('pages/transaksibeli', compact('data'));
 
     }
 
@@ -85,10 +97,10 @@ class transaksibeli extends Controller
     public function updateverifikasi(Request $request, $id)
     {
         $statusverifikasi = "1";
-        $findid = DB::table('tambahbelis')
-        ->where('id', $id)
-        ->update(['statusverifikasi' => '1']);
-        
+        $findid = DB::table('panens')
+            ->where('id', $id)
+            ->update(['statusdaripengepul' => $statusverifikasi]);
+
         // $findid = Modeltransaksibeli::find($id);
         // $findid->update([
         //     // 'id_user' => $currentuserid,

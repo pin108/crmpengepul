@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\pemprosessan;
 use App\Http\Controllers\pendaftaranController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\transaksibeli;
@@ -31,9 +32,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/pages/crudpengepul', function () {
         return view('pages.crudpengepul');
     });
-    Route::get('/pages/pemprosesan', function () {
-        return view('pages.pemprosesan');
-    });
+    // Route::get('/pages/pemprosesan', function () {
+    //     return view('pages.pemprosesan');
+    // });
     // Route::get('/pages/transaksibeli', function () {
     //     return view('pages.transaksibeli');
     // });
@@ -47,6 +48,7 @@ Route::middleware('auth')->group(function () {
 
     Route::post('/kirim/daftarpengepul', [pendaftaranController::class, 'store']);
     Route::get('/pages/transaksibeli', [transaksibeli::class, 'index']);
+    Route::get('/pages/pemprosesan', [pemprosessan::class, 'index']);
     Route::post('/kirim/updateverifikasi/{id}', [transaksibeli::class, 'updateverifikasi']);
     Route::post('/kirim/tambahtransaksibeli', [transaksibeli::class, 'store']);
 });
