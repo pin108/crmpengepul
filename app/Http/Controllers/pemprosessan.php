@@ -33,7 +33,7 @@ class pemprosessan extends Controller
             ->join('panens', 'id_penebas', '=', 'daftarpengepuls.nama')
             ->where('status', 'verify')
             ->where('daftarpengepuls.nama', $namapengepul)
-            ->where('statusdaripengepul' , 1)
+            ->where('statusdaripengepul', 1)
             ->get();
         $data = json_decode($response, True);
         // return redirect('pages/myprofile');

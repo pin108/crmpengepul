@@ -22,6 +22,11 @@
                                     {{-- @endforeach --}}
                                 </th>
                                 <th>
+                                    {{-- {{ $item['tanggal'] }} --}}
+                                    Nama Petani
+                                    {{-- @endforeach --}}
+                                </th>
+                                <th>
                                     Taksir Petani
                                 </th>
                                 <th>
@@ -46,7 +51,10 @@
                                 <tr>
 
                                     <td class="py-1">
-                                        <span>13/12/2022</span>
+                                        <span>{{ $item['panen_tanggal'] }}</span>
+                                    </td>
+                                    <td>
+                                        {{ $item['namapetani'] }}
                                     </td>
                                     <td>
                                         5 Ton
