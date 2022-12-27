@@ -52,32 +52,33 @@
                                         {{ $item['panen_harga'] }}
                                     </td>
                                     <td>
-                                    <?php
-                                    if ($item['statusdaripengepul'] == 0){
-                                        echo("belum terverifikasi");
-                                    }else{
-                                        echo("Telah Terverifikasi");
-                                    }
-                                    ?>
+                                        <?php
+                                        if ($item['statusdaripengepul'] == 0) {
+                                            echo 'belum terverifikasi';
+                                        } else {
+                                            echo 'Telah Terverifikasi';
+                                        }
+                                        ?>
                                     </td>
                                     <td>
                                         <div class="action">
                                             <form action="/kirim/updateverifikasi/{{ $item['id'] }}" method="post">
                                                 @csrf
-                                            <button type="submit" class="btn btn-sm btn-success" id="statusverifikasi" name="statusverifikasi" type="submit" value="1">
-                                                <span>Verifikasi</span>
-                                                {{-- <a href=''> --}}
-                                            </button>
-                                            
-                                            <button class="btn btn-sm btn-warning" data-bs-toggle="modal"
-                                                data-bs-target="#modaledit">
-                                                <span>Edit</span>
-                                            </button>
+                                                <button type="submit" class="btn btn-sm btn-success" id="statusverifikasi"
+                                                    name="statusverifikasi" type="submit" value="1">
+                                                    <span>Verifikasi</span>
+                                                    {{-- <a href=''> --}}
+                                                </button>
 
-                                            <button class="btn btn-sm btn-danger">
-                                                <span>Sanggah</span>
-                                            </button>
-                                        </form>
+                                                <button class="btn btn-sm btn-warning" data-bs-toggle="modal"
+                                                    data-bs-target="#modaledit">
+                                                    <span>Edit</span>
+                                                </button>
+
+                                                <button class="btn btn-sm btn-danger">
+                                                    <span>Sanggah</span>
+                                                </button>
+                                            </form>
                                         </div>
                                     </td>
                                 </tr>
@@ -102,34 +103,45 @@
                         action="{{ url('/kirim/tambahtransaksibeli') }}">
                         @csrf
                         <div class="form-group">
-                            <label for="nama_petani">Nama Petani</label>
+                            <label for="namapetani">Nama Petani:</label>
                             <input type="text" class="form-control" id="namapetani" name="namapetani"
-                                placeholder="Nama Petani">
+                                placeholder="Enter Nama Petani">
                         </div>
                         <div class="form-group">
-                            <label for="alamat">Lokasi/Alamat</label>
-                            <input type="text" class="form-control" id="lokasi" name="lokasi"
-                                placeholder="Alamat/lokasi">
+                            <label for="id_lokasisawah">Ketik Kabupaten Sawah:</label>
+                            <input type="text" class="form-control" id="id_lokasisawah" name="id_lokasisawah"
+                                placeholder="Enter Kabupaten Sawah">
+                        </div>
+                        {{-- <div class="form-group">
+                            <label for="ks_waktu_tanam">Waktu Tanam:</label>
+                            <input type="text" class="form-control" id="ks_waktu_tanam" name="ks_waktu_tanam"
+                                placeholder="Enter Waktu Tanam">
+                        </div> --}}
+                        <div class="form-group">
+                            <label for="panen_tanggal">Tanggal Panen:</label>
+                            <input type="date" class="form-control" id="panen_tanggal" name="panen_tanggal"
+                                placeholder="Enter Tanggal Panen">
                         </div>
                         <div class="form-group">
-                            <label for="kabupaten">Kabupaten</label>
-                            <input type="text" class="form-control" id="kabupaten" name="kabupaten"
-                                placeholder="Kabupaten">
+                            <label for="panen_jumlah">Jumlah Panen:</label>
+                            <input type="text" class="form-control" id="panen_jumlah" name="panen_jumlah"
+                                placeholder="Enter Jumlah Panen">
                         </div>
+                        {{-- <div class="form-group">
+                            <label for="id_penebas">ID Penebas:</label>
+                            <input type="text" class="form-control" id="id_penebas" name="id_penebas"
+                                placeholder="Enter ID Penebas">
+                        </div> --}}
                         <div class="form-group">
-                            <label for="taksiranpanen">Taksiran Panen</label>
-                            <input type="text" class="form-control" id="tafsiranpanen" name="tafsiranpanen"
-                                placeholder="Taksiran Panen">
+                            <label for="harga_sepakat">Harga Yang Disepakati:</label>
+                            <input type="text" class="form-control" id="harga_sepakat" name="harga_sepakat"
+                                placeholder="Enter Harga Yang Disepakati">
                         </div>
-                        <div class="form-group">
-                            <label for="jumlahhasil">Jumlah Panen</label>
-                            <input type="text" class="form-control" id="jumlahhasil" name="jumlahhasil"
-                                placeholder="Jumlah Panen">
-                        </div>
-                        <div class="form-group">
-                            <label for="tanggal">Tanggal</label>
-                            <input type="date" class="form-control" id="tanggal" name="tanggal" placeholder="tanggal">
-                        </div>
+                        {{-- <div class="form-group">
+                            <label for="statusdaripengepul">Status Pengepul:</label>
+                            <input type="text" class="form-control" id="statusdaripengepul" name="statusdaripengepul"
+                                placeholder="Enter Status Pengepul">
+                        </div> --}}
                         <div class="modal-footer" style="border:none;">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
                             <button type="submit" class="btn btn-primary">Simpan</button>

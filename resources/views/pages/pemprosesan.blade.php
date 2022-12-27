@@ -27,7 +27,7 @@
                                     {{-- @endforeach --}}
                                 </th>
                                 <th>
-                                    Taksir Petani
+                                    Panen Jumlah
                                 </th>
                                 <th>
                                     Taksir Pengepul
@@ -57,7 +57,8 @@
                                         {{ $item['namapetani'] }}
                                     </td>
                                     <td>
-                                        5 Ton
+                                        {{ $item['panen_jumlah'] }}
+
                                     </td>
                                     <td>
                                         {{ $item['panen_harga'] }}
