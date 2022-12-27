@@ -8,9 +8,9 @@
                 <div class="up"
                     style="display: flex; flex-direction: row; align-items: center; justify-content: space-between;">
                     <h4 class="card-title">Pemprosesan</h4>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modaltambah">
+                    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modaltambah">
                         <span>Tambah</span>
-                    </button>
+                    </button> -->
                 </div>
                 <div class="table-responsive">
                     <table class="table table-striped">
@@ -73,13 +73,15 @@
                                     </td>
                                     <td>
                                         <div class="action">
-                                            {{-- <button class="btn btn-sm btn-warning">
-                                                <span>Proses</span> --}}
-                                            </button><form action="/proses/updatedata/{{ $item['id'] }}" method="post">
-                                                @csrf
-                                            <button type="submit" class="btn btn-sm btn-success" id="statusverifikasi" name="statusverifikasi" type="submit" value="1">
+                                            <!-- </button><form action="/proses/updatedata/{{ $item['id'] }}" method="post" class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#modalprocess">
+                                                @csrf -->
+                                            <a href="/updatepemrosesan/{{ $item['id'] }}"  class="btn btn-sm btn-success">Process</a>
+                                            <!-- <button type="submit" class="btn btn-sm btn-success" id="statusverifikasi" name="statusverifikasi" type="submit" value="1">
                                                 <span>Process</span>
-                                                {{-- <a href=''> --}}
+                                            </button> -->
+                                            <!-- <button class="btn btn-sm btn-success" data-bs-toggle="modal"
+                                                data-bs-target="#modalprocess"> -->
+                                                <!-- <span>Process</span> -->
                                             </button>
                                         </div>
                                     </td>
@@ -93,7 +95,7 @@
     </div>
     </div>
     <!-- modal tambah-->
-    <div class="modal fade" id="modaltambah" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="modaltambah" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -117,6 +119,37 @@
                         <div class="form-group">
                             <label for="gradec">Grade C</label>
                             <input type="text" class="form-control" id="gradec" placeholder="">
+                        </div>
+                        <div class="modal-footer" style="border:none;">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                            <button type="button" class="btn btn-primary">Simpan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- modal process -->
+    <div class="modal fade" id="modalprocess" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Data Pemprosesan</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="forms-sample" action="">
+                        <div class="form-group">
+                            <label for="gradea">Grade A</label>
+                            <input type="number" name="panen_kualitas_a" class="form-control" id="gradea" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="gradeb">Grade B</label>
+                            <input type="number" name="panen_kualitas_b" class="form-control" id="gradeb" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="gradec">Grade C</label>
+                            <input type="number" name="panen_kualitas_c" class="form-control" id="gradec" placeholder="">
                         </div>
                         <div class="modal-footer" style="border:none;">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>

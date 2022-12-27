@@ -69,7 +69,9 @@ class pemprosessan extends Controller
      */
     public function show($id)
     {
-        //
+        $data = DB::table('panens')->find($id);
+        // $data = json_decode($response, True);
+        return view('/pages/updatepemrosesan', compact('data'));
     }
 
     /**
@@ -81,7 +83,7 @@ class pemprosessan extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = Modeltransaksibeli::find($id);
+        // $data = Modeltransaksibeli::find($id);
         $panen_tanggal = $request->input('tanggal');
 
         // panen hasil produksi
@@ -89,16 +91,10 @@ class pemprosessan extends Controller
         $stnpanenhasil = $request->input('stnpanenhasil');
         // $resulthasilpanen = $panenhasil;
         // if ($stnpanenhasil == "Kuintal") {
-        //     $resulthasilpanen = $resulthasilpanen * 100;
-        // }222
-        // if ($stnpanenhasil == "Ton") {
-        //     $resulthasilpanen = $resulthasilpanen * 1000;
-        // } else {
-        //     $resulthasilpanen = $resulthasilpanen;
-        // }
+      
 
         // panen kualitas a
-        $panenkualitas_a = $request->input('kualitasA');
+        $panenkualitas_a = $request->input('panen_kualitas_a');
         // $stnpanenkualitas_a = $request->input('stnpanenkualitas_a');
         // $resultpanenkualitas_a = $panenkualitas_a;
         // if ($stnpanenkualitas_a == "Kuintal") {
@@ -111,7 +107,7 @@ class pemprosessan extends Controller
         // }
 
         // panen kualitas b
-        $panenkualitas_b = $request->input('kualitasB');
+        $panenkualitas_b = $request->input('panen_kualitas_b');
         // $stnpanenkualitas_b = $request->input('stnpanenkualitas_b');
         // $resultpanenkualitas_b = $panenkualitas_b;
         // if ($stnpanenkualitas_b == "Kuintal") {
@@ -124,7 +120,7 @@ class pemprosessan extends Controller
         // }
 
         // panen kualitas c 
-        $panenkualitas_c = $request->input('kualitasC');
+        $panenkualitas_c = $request->input('panen_kualitas_c');
         // $stnpanenkualitas_c = $request->input('stnpanenkualitas_c');
         // $resultpanenkualitas_c = $panenkualitas_c;
         // if ($stnpanenkualitas_c == "Kuintal") {
@@ -135,18 +131,19 @@ class pemprosessan extends Controller
         // } else {
         //     $resultpanenkualitas_c = $resultpanenkualitas_c;
         // }
+        $data = DB::table('panens')->find($id);
 
         $data->update([
             // 'id_user' => $currentuserid,
             // 'id_lokasisawah' => $datalokasi,
             // 'panen_tanggal' => $panen_tanggal,
             // 'panen_hasil_produksi' => $resulthasilpanen,
-            'kualitasA' => $panenkualitas_a,
-            'kualitasB' => $panenkualitas_b,
-            'kualitasC' => $panenkualitas_c
+            'panen_kualitas_a' => $panenkualitas_a,
+            'panen_kualitas_b' => $panenkualitas_b,
+            'panen_kualitas_c' => $panenkualitas_c
         ]);
-
-
+        
+        return redirect('/pages/pemprosesan');
 
     }
 

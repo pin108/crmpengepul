@@ -49,6 +49,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/kirim/daftarpengepul', [pendaftaranController::class, 'store']);
     Route::get('/pages/transaksibeli', [transaksibeli::class, 'index']);
     Route::get('/pages/pemprosesan', [pemprosessan::class, 'index']);
+    Route::get('/updatepemrosesan/{id}', [pemprosessan::class, 'show']);
+    Route::post('/kirim/updatepemprosesan/{id}', [pemprosessan::class, 'update']);
     Route::post('/kirim/updateverifikasi/{id}', [transaksibeli::class, 'updateverifikasi']);
     Route::post('/kirim/tambahtransaksibeli', [transaksibeli::class, 'store']);
 });
