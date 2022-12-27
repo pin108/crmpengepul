@@ -85,14 +85,12 @@ class pemprosessan extends Controller
 
         // $namapetani = Auth::user()->name;
         // $response = DB::table('panen')->select('*')->where('id_penebas', $namapengepul)->get();
-        $response = DB::table('daftarpengepuls')
-            ->join('panens', 'id_penebas', '=', 'daftarpengepuls.nama')
-            ->where('status', 'verify')
-            ->where('daftarpengepuls.nama', $namapengepul)
-            ->where('statusdaripengepul', 1)
+        $response = DB::table('panens')
+            // ->join('panens', 'id_penebas', '=', 'daftarpengepuls.nama')
+            ->where('id', $id)
             ->get();
         $data = json_decode($response, True);
-        
+
         return view('/pages/updatepemrosesan', compact('data'));
     }
 

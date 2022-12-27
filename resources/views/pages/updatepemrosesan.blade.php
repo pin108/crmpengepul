@@ -8,6 +8,7 @@
                 <h4 class="card-title">Halaman Pemrosesan</h4>
                 @foreach ($data as $item)
                 <form method="post" action="/kirim/upproses/{{$item['id']}}">
+                    @endforeach
                     @csrf
                     <div class="form-group">
                         <label for="exampleInputEmail1">Penen Kualitas A (Bagus)</label>
@@ -27,7 +28,7 @@
                     <br>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
-                @endforeach
+                
             </div>
         </div>
     </div>
