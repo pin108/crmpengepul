@@ -1,6 +1,7 @@
 @extends('layouts.mother')
 
 @section('container')
+
 <!-- Transaksi Beli -->
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
@@ -88,6 +89,95 @@
                         @endforeach
                     </tbody>
                 </table>
+
+    <!-- Transaksi Beli -->
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <div class="up"
+                    style="display: flex; flex-direction: row; align-items: center; justify-content: space-between;">
+                    <h4 class="card-title">Transaksi Beli</h4>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modaltambah">
+                        <span>Tambah</span>
+                    </button>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Tanggal
+                                </th>
+                                <th>
+                                    Petani
+                                </th>
+                                <th>
+                                    Jumlah Panen dari petani
+                                </th>
+                                <th>
+                                    Tafsiran Harga dari petani
+                                </th>
+                                <th>
+                                    Status Verifikasi
+                                </th>
+                                <th>
+                                    Aksi
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($data as $item)
+                                <tr>
+                                    <td class="py-1">
+                                        <span>{{ $item['panen_tanggal'] }}</span>
+                                    </td>
+                                    <td>
+                                        {{ $item['namapetani'] }}
+                                    </td>
+                                    <td>
+                                        {{ $item['panen_jumlah'] }}
+                                    </td>
+                                    <td>
+                                        {{ $item['panen_harga'] }}
+                                    </td>
+                                    <td>
+                                        <?php
+                                        if ($item['statusdaripengepul'] == 0) {
+                                            echo 'belum terverifikasi';
+                                        } else {
+                                            echo 'Telah Terverifikasi';
+                                        }
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <div class="action">
+                                            <form action="/kirim/updateverifikasi/{{ $item['id'] }}" method="post">
+                                                @csrf
+                                                <button type="submit" class="btn btn-sm btn-success" id="statusverifikasi"
+                                                    name="statusverifikasi" type="submit" value="1">
+                                                    <span>Verifikasi</span>
+                                                    {{-- <a href=''> --}}
+                                                </button>
+                                            </form>
+
+                                            <button class="btn btn-sm btn-warning" data-bs-toggle="modal"
+                                                data-bs-target="#modaledit">
+                                                <span>Edit</span>
+                                            </button>
+                                            <form action="/hapus/transaksibeli/{{ $item['id'] }}" method="post">
+                                                @csrf
+                                                <button type="submit" class="btn btn-sm btn-danger">
+                                                    <span>Sanggah</span>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+
             </div>
         </div>
     </div>

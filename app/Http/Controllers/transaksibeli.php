@@ -154,6 +154,10 @@ class transaksibeli extends Controller
      */
     public function destroy($id)
     {
-        //
+        $findid = DB::table('panens')
+            ->where('id', $id)
+            ->delete();
+            
+        return redirect('/pages/transaksibeli')->with('data berhasil di hapus');
     }
 }

@@ -18,7 +18,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    return view('auth.login');
+
 });
 
 Route::get('/dashboard', function () {
@@ -51,6 +53,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/pages/pemprosesan', [pemprosessan::class, 'index']);
     Route::get('/updatepemrosesan/{id}', [pemprosessan::class, 'show']);
     Route::post('/kirim/upproses/{id}', [pemprosessan::class, 'update']);
+    Route::post('/hapus/transaksibeli/{id}', [transaksibeli::class, 'destroy']);
     Route::post('/kirim/updateverifikasi/{id}', [transaksibeli::class, 'updateverifikasi']);
     Route::post('/kirim/tambahtransaksibeli', [transaksibeli::class, 'store']);
 });

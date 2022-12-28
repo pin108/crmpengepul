@@ -49,4 +49,12 @@
             </x-primary-button>
         </div>
     </form>
+    <div>
+        <br>
+            <br>
+            <p class="bold">Sudah punya akun ? klik disini</p>
+            <x-primary-button class="row">
+                <a href={{ url('/login')}}>Login</a>
+            </x-primary-button>
+    </div>
 </x-guest-layout>
