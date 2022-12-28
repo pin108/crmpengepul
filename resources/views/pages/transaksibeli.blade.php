@@ -69,13 +69,15 @@
                                                     <span>Verifikasi</span>
                                                     {{-- <a href=''> --}}
                                                 </button>
+                                            </form>
 
-                                                <button class="btn btn-sm btn-warning" data-bs-toggle="modal"
-                                                    data-bs-target="#modaledit">
-                                                    <span>Edit</span>
-                                                </button>
-
-                                                <button class="btn btn-sm btn-danger">
+                                            <button class="btn btn-sm btn-warning" data-bs-toggle="modal"
+                                                data-bs-target="#modaledit">
+                                                <span>Edit</span>
+                                            </button>
+                                            <form action="/hapus/transaksibeli/{{ $item['id'] }}" method="post">
+                                                @csrf
+                                                <button type="submit" class="btn btn-sm btn-danger">
                                                     <span>Sanggah</span>
                                                 </button>
                                             </form>
