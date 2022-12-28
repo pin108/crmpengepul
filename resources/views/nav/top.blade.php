@@ -6,11 +6,11 @@
             </button>
         </div>
         <div>
-            <a class="navbar-brand brand-logo" href="index.html">
-                <img src="{{ asset('template/images/crmlogo.png') }}" alt="logo" />
+            <a class="navbar-brand brand-logo" href="{{ url('/dashboard') }}">
+                <img src="{{ asset('template/images/logosmartbawang.jpg') }}" alt="logo" />
             </a>
             <a class="navbar-brand brand-logo-mini" href="index.html">
-                <img src="{{ asset('template/images/crmlogo.png') }}" alt="logo" />
+                <img src="{{ asset('template/images/logosmartbawang.jpg') }}" alt="logo" />
             </a>
         </div>
     </div>
